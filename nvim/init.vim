@@ -1,43 +1,150 @@
-" Base
-set number
-set showmatch
-set expandtab
-set smarttab
-set shiftwidth=2
-set tabstop=2
-set ai
-set si
-set wrap
-set autoindent
-set filetype
-set shiftround
-set ignorecase
-set incsearch
-set smartcase
+""""""""""""""""
+"""""""" Plugins
+""""""""""""""""
+call plug#begin()
+    " Appearance
+    Plug 'vim-airline/vim-airline'
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'navarasu/onedark.nvim'
 
 
-" Performance
-set complete-=i
-set lazyredraw
-syntax enable
-set wrap
+    " Utilities
+    Plug 'sheerun/vim-polyglot'
+    Plug 'jiangmiao/auto-pairs'
+    Plug 'ap/vim-css-color'
+    Plug 'preservim/nerdtree'
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    Plug 'junegunn/fzf.vim'
 
 
-" UI
-set laststatus=2
-set wildmenu
-set noerrorbells
-set visualbell
-set title
-set background=dark
+    " Completion / linters / formatters
+    Plug 'plasticboy/vim-markdown'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+    " Git
+    Plug 'airblade/vim-gitgutter'
+call plug#end()
 
 
-" Code Folder
-set nofoldenable
+""""""""""""""""""""""
+"""""""" Plugin Setup
+""""""""""""""""""""""
+
+""""""""""""
+"""""" Theme
+""""""""""""
+let g:onedark_config = {
+    \ 'style': 'darker',
+\}
+colorscheme onedark
+
+" Enable theming support
+if (has("termguicolors"))
+ set termguicolors
+endif
 
 
-""" Status Line
-set laststatus=2
-" set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ Dir.:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
+""""""""""""""
+"""""" Airline
+""""""""""""""
+let g:airline_theme='onedark'
+let g:airline_powerline_fonts = 1
 
 
+""""""""""""""""
+"""""" NerdTree
+""""""""""""""""
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeIgnore = []
+let g:NERDTreeStatusline = ''
+" Automaticaly close nvim if NERDTree is only thing left open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Toggle
+nnoremap <silent> <C-b> :NERDTreeToggle<CR>
+
+
+""""""""""""""""""""""""""
+"""""" Integrated Terminal
+""""""""""""""""""""""""""
+" open new split panes to right and below
+set splitright
+set splitbelow
+" turn terminal to normal mode with escape
+tnoremap <Esc> <C-\><C-n>
+" start terminal in insert mode
+au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+" open terminal on ctrl+n
+function! OpenTerminal()
+  split term://zsh
+  resize 10
+endfunction
+nnoremap <c-n> :call OpenTerminal()<CR>
+
+
+""""""""""""""""""""""
+"""""""" Panels Switch
+""""""""""""""""""""""
+" use alt+hjkl to move between split/vsplit panels
+tnoremap <A-h> <C-\><C-n><C-w>h
+tnoremap <A-j> <C-\><C-n><C-w>j
+tnoremap <A-k> <C-\><C-n><C-w>k
+tnoremap <A-l> <C-\><C-n><C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
+
+
+"""""""""""""""""""""
+"""""" File Searching
+""""""""""""""""""""""
+nnoremap <C-p> :FZF<CR>
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit'
+  \}
+
+
+""""""""""""
+"""""" CTRLP
+""""""""""""
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+" Disable math tex conceal feature
+let g:tex_conceal = ''
+let g:vim_markdown_math = 1
+
+
+""""""""""""""""""
+"""""""" Markdown
+""""""""""""""""""
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_fenced_languages = ['tsx=typescriptreact']
+
+
+""""""""""""
+"""""" COC
+""""""""""""
+let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
+
+
+""""""""""""""
+"""""""" Keymaps
+""""""""""""""""
+" Normal mode remappings
+nnoremap <C-q> :q!<CR>
+nnoremap <F4> :bd<CR>
+
+
+""""""""""""
+"""""" Tabs
+""""""""""""
+nnoremap <S-Tab> gT
+nnoremap <Tab> gt
+nnoremap <silent> <S-t> :tabnew<CR>
