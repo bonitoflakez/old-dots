@@ -153,6 +153,14 @@ nnoremap <S-Tab> gT
 nnoremap <Tab> gt
 nnoremap <silent> <S-t> :tabnew<CR>
 
+""""""""""""
+"""""" KEYS
+""""""""""""
+nmap <M-Right> :vertical resize +1<CR>
+nmap <M-Left> :vertical resize -1<CR>
+nmap <M-Down> :resize +1<CR>
+nmap <M-Up> :resize -1<CR>
+
 
 """"""""""""""""
 """""" General
