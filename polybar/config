@@ -28,7 +28,7 @@ format-offset =
 
 [colors]
 # One Dark
-background = #151820
+background = #aa1e2127
 foreground = #c0c5ce
 alert = #e06c75
 volume-min = #a3be8c
