@@ -1,6 +1,7 @@
 # arch-dots
 
-![image](https://user-images.githubusercontent.com/78542800/155898860-de082078-924c-41d5-8760-31fd96d57ad9.png)
+![image](https://user-images.githubusercontent.com/78542800/155968925-4cf93900-2a58-4cbb-b4a6-5fa0fc711ca6.png)
+
 
 - **Arch Linux BTW**
 - NeoVim + VS-Code
