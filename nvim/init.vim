@@ -7,7 +7,7 @@ call plug#begin()
     Plug 'ryanoasis/vim-devicons'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'navarasu/onedark.nvim'
-
+    Plug 'xiyaowong/nvim-transparent'
 
     " Utilities
     Plug 'sheerun/vim-polyglot'
@@ -38,6 +38,10 @@ let g:onedark_config = {
     \ 'style': 'darker',
 \}
 colorscheme onedark
+
+" transparent bg
+" autocmd vimenter * hi Normal guibg=000000 ctermbg=000000
+let g:transparent_enabled = v:true
 
 " Enable theming support
 if (has("termguicolors"))
@@ -148,3 +152,17 @@ nnoremap <F4> :bd<CR>
 nnoremap <S-Tab> gT
 nnoremap <Tab> gt
 nnoremap <silent> <S-t> :tabnew<CR>
+
+
+""""""""""""""""
+"""""" General
+""""""""""""""""
+set number
+set tabstop=2
+set expandtab
+set smartindent
+set shiftwidth
+syntax enable
+syntax on
+set list
+

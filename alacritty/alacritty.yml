@@ -1,25 +1,15 @@
-# Configuration for Alacritty, the GPU enhanced terminal emulator.
 env:
   # TERM variable
   TERM: alacritty
 
 window:
-  #dimensions:
-  #  columns: 0
-  #  lines: 0
-  
-  # Window padding (changes require restart)
   padding:
-    x: 4
-    y: 6
+    x: 5
+    y: 5
 
-  # Spread additional padding evenly around the terminal content.
-  #dynamic_padding: false
-
-  # Window title
+  dynamic_padding: true
   title: Alacritty
 
-  # Window class (Linux/BSD only):
   class:
     instance: Alacritty
     general: Alacritty
@@ -108,16 +98,27 @@ colors:
     white:   '0x828791'
 
 # Background opacity
-# The value `0.0` is completely transparent and `1.0` is opaque.
-window.opacity: 0.8
+# The value `0.0` is completely transparent and `1.0` is opaque
+window:
+  opacity: 0.6
+
+# Transparent cell backgrounds
+#
+# Whether or not `window.opacity` applies to all cell backgrounds or only to
+# the default background. When set to `true` all cells will be transparent
+# regardless of their background color.
+transparent_background_colors: true
 
 #selection:
 #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
 #save_to_clipboard: false
 
+# Window Title
+title: Alacritty
+
 # Allow terminal applications to change Alacritty's window title.
-dynamic_title: true
+dynamic_title: false
 
 #cursor:
 # Values for `style`:
