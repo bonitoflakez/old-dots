@@ -58,6 +58,7 @@ bindsym $mod+d exec --no-startup-id "dmenu_run -nf '#eeeeee' -nb '#151820' -sb '
 for_window [class=".*"] border pixel 2
 gaps inner 6
 gaps outer 2
+border_radius 0
 
 # change focus
 bindsym $mod+j focus left
