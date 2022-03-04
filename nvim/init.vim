@@ -173,4 +173,6 @@ set shiftwidth
 syntax enable
 syntax on
 set list
-
+set ignorecase
+set smartcase
+set incsearch

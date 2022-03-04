@@ -223,5 +223,8 @@ exec_always --no-startup-id picom --experimental-backends --config ~/.config/i3/
 # pulseaudio applet
 # exec_always --no-startup-id pa-applet
 
+# dunst
+exec --no-startup-id dunst
+
 # caffeine
-exec --no-startup-id caffiene --activate
+# exec --no-startup-id caffiene --activate
