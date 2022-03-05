@@ -71,9 +71,9 @@ module-margin-right = 0
 
 font-0 = "Inconsolata:style=Bold:size=10;2"
 font-1 = "UbuntuMono Nerd Font:size=16;3"
-font-2 = "FontAwesome:style=Regular:pixelsize=8;1"
-font-3 = "FontAwesome:style=Solid:pixelsize=8;1"
-font-4 = "FontAwesome:pixelsize=8;1"
+font-2 = "Font Awesome 6 Free Solid:style=Solid:size=8;1"
+font-3 = "Font Awesome 6 Brands Regular:style=Regular:size=8;1"
+font-4 = "Font Awesome 6 Free Regular:style=Regular:size=8;1"
 font-5 = "PowerlineSymbols:pixelsize=14;3"
 
 modules-left = xwindow
@@ -153,14 +153,14 @@ module-margin-right = 0
 
 font-0 = "Inconsolata:style=Bold:size=10;2"
 font-1 = "UbuntuMono Nerd Font:size=16;3"
-font-2 = "FontAwesome:style=Regular:pixelsize=8;1"
-font-3 = "FontAwesome:style=Solid:pixelsize=8;1"
-font-4 = "FontAwesome:pixelsize=8;1"
+font-2 = "Font Awesome 6 Free Solid:style=Solid:size=8;1"
+font-3 = "Font Awesome 6 Brands Regular:style=Regular:size=8;1"
+font-4 = "Font Awesome 6 Free Regular:style=Regular:size=8;1"
 font-5 = "PowerlineSymbols:pixelsize=14;3"
 
 modules-left = i3
 modules-center =
-modules-right = wireless-network cpu memory battery pavolume backlight uptime
+modules-right = wired-network networkspeedup networkspeeddown cpu temperature1 memory battery pavolume backlight uptime
 
 separator = " - "
 
@@ -665,6 +665,7 @@ bar-used-empty-foreground = ${colors.foreground}
 
 format = <label> <bar-used>
 format-prefix = " "
+; format-prefix = " "
 format-prefix-foreground = #61afef
 format-underline = #61afef
 format-foreground = ${colors.foreground}
@@ -701,11 +702,12 @@ type = internal/network
 ;interface = wlp3s0
 ;interface = enp14s0
 ;interface = enp0s31f6
-interface = wlo1
+interface = enp37s0
 label-connected = "%upspeed%"
 format-connected = <label-connected>
 format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground}
+format-connected-underline = #c678dd
+format-connected-prefix-foreground = #c678dd
 format-connected-foreground = ${colors.foreground}
 format-connected-background = ${colors.background}
 
@@ -715,11 +717,12 @@ format-connected-background = ${colors.background}
 type = internal/network
 ;interface = wlp3s0
 ;interface = enp0s31f6
-interface = wlo1
+interface = enp37s0
 label-connected = "%downspeed%"
 format-connected = <label-connected>
 format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground}
+format-connected-prefix-foreground = #56b6c2
+format-connected-underline = #56b6c2
 format-connected-foreground = ${colors.foreground}
 format-connected-background = ${colors.background}
 
@@ -821,13 +824,15 @@ thermal-zone = 0
 ; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
 ; to find path to desired file
 ; Default reverts to thermal zone setting
-hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input
+; hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input
+hwmon-path = /sys/devices/pci0000:00/0000:00:08.1/0000:2a:00.0/hwmon/hwmon2/temp1_input
 
 warn-temperature = 70
 format = <ramp> <label>
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-underline = #c72581
+format-underline = #e06c75
+format-prefix-foreground = #e06c75
 format-warn = <ramp> <label-warn>
 format-warn-underline = #c7254f
 label = %temperature%
@@ -843,28 +848,15 @@ ramp-foreground =${colors.foreground}
 
 ################################################################################
 
-[module/temperature2]
-type = custom/script
-exec = ~/.config/polybar/scripts/tempcores.sh
-interval = 2
-format-padding = 1
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-format-underline = #C1B93E
-format-prefix-foreground = #C1B93E
-label =  %output:0:150:%
-
-################################################################################
-
 [module/uptime]
 type = custom/script
-exec = uptime | awk -F, '{sub(".*up ",x,$1);print $1}'
+exec = ~/.config/polybar/scripts/uptime.sh
 interval = 100
-label = UT:%output%
+label = %output%
 
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = #e06c75
 format-underline = #e06c75
 
@@ -901,25 +893,11 @@ format-muted-prefix-foreground = "#ff0000"
 format-muted-foreground = ${colors.foreground}
 format-muted-background = ${colors.background}
 
-################################################################################
-
-[module/weather]
-type = custom/script
-interval = 10
-format = <label>
-format-prefix = " "
-format-prefix-foreground = #3EC13F
-format-underline = #3EC13F
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-exec = python -u ~/.config/polybar/scripts/weather.py
-tail = true
-
 #################################################################################
 
 [module/wired-network]
 type = internal/network
-interface = enp4s0
+interface = enp37s0
 ;interface = enp14s0
 interval = 3.0
 
