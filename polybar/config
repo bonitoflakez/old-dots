@@ -253,18 +253,17 @@ fuzzy-match = false
 ;http://fontawesome.io/cheatsheet/
 ;       v     
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-6 = 7;
-; ws-icon-7 = 8;
-; ws-icon-8 = 9;
-; ws-icon-9 = 10;
-ws-icon-default = ""
-show-all = true;
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+ws-icon-default = "  "
 
 ; Available tags:
 ;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
@@ -273,8 +272,8 @@ format = <label-state> <label-mode>
 
 label-mode = %mode%
 label-mode-padding = 1
-label-mode-foreground = #abb2bf
-label-mode-background = #aa1e2127
+label-mode-foreground = #000000
+label-mode-background = #FFBB00
 
 ; Available tokens:
 ;   %name%
@@ -283,7 +282,7 @@ label-mode-background = #aa1e2127
 ;   %output%
 ; Default: %icon%  %name%
 ; focused = Active workspace on focused monitor
-label-focused = %icon%
+label-focused =  %index%
 label-focused-background = ${colors.background}
 label-focused-foreground = ${colors.foreground}
 label-focused-underline = ${colors.foreground}
@@ -295,14 +294,14 @@ label-focused-padding = 1
 ;   %index%
 ; Default: %icon%  %name%
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %icon%
+label-unfocused =  %index%
 label-unfocused-padding = 1
 label-unfocused-background = ${colors.background}
 label-unfocused-foreground = ${colors.foreground}
 label-unfocused-underline =
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %icon%
+label-visible = %icon% %index%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = 1
@@ -313,8 +312,8 @@ label-visible-padding = 1
 ;   %index%
 ; Default: %icon%  %name%
 ; urgent = Workspace with urgency hint set
-label-urgent = %icon%
-label-urgent-background = 
+label-urgent =  %index%
+label-urgent-background = ${self.label-focused-background}
 label-urgent-foreground = #db104e
 label-urgent-padding = 1
 
