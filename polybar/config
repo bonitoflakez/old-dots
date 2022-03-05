@@ -17,8 +17,8 @@ compositing-overline = over
 compositing-underline = over
 compositing-border = over
 
-format-foreground = #FF0000
-format-background = #00FF00
+format-foreground = #abb2bf
+format-background = #aa1e2127
 format-underline =
 format-overline =
 format-spacing =
@@ -74,10 +74,13 @@ font-1 = "UbuntuMono Nerd Font:size=16;3"
 font-2 = "Font Awesome 6 Free Solid:style=Solid:size=8;1"
 font-3 = "Font Awesome 6 Brands Regular:style=Regular:size=8;1"
 font-4 = "Font Awesome 6 Free Regular:style=Regular:size=8;1"
-font-5 = "PowerlineSymbols:pixelsize=14;3"
+font-5 = "NotoSans-Regular:size=8;2"
+font-6 = "MaterialIcons:size=10"
+font-7 = "PowerlineSymbols:pixelsize=14;3"
+font-10 = "Font Awesome v4 Compatibility Regular:style=Regular:size=8;1"
 
 modules-left = xwindow
-modules-center = date
+modules-center = i3
 modules-right = 
 
 separator = " "
@@ -85,7 +88,7 @@ separator = " "
 tray-position = right
 tray-detached = false
 tray-maxsize = 20
-tray-background = ${colors.background}
+tray-background = #aa1e2127
 tray-offset-x = 0
 tray-offset-y = 0
 tray-padding = 4
@@ -158,18 +161,18 @@ font-3 = "Font Awesome 6 Brands Regular:style=Regular:size=8;1"
 font-4 = "Font Awesome 6 Free Regular:style=Regular:size=8;1"
 font-5 = "PowerlineSymbols:pixelsize=14;3"
 
-modules-left = i3
-modules-center =
-modules-right = wired-network networkspeedup networkspeeddown cpu temperature1 memory battery pavolume backlight uptime
+modules-left = now-playing
+modules-center = wired-network temperature1 cpu memory pavolume networkspeedup networkspeeddown
+modules-right = date uptime
 
 separator = " - "
 
-tray-position = right
-tray-detached = false
+tray-position = none
+tray-detached = true
 tray-maxsize = 20
 tray-background = ${colors.background}
-tray-offset-x = 0
-tray-offset-y = 0
+tray-offset-x = 10
+tray-offset-y = 10
 tray-padding = 4
 tray-scale = 1.0
 
@@ -250,17 +253,18 @@ fuzzy-match = false
 ;http://fontawesome.io/cheatsheet/
 ;       v     
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-6 = 7;
-ws-icon-7 = 8;
-ws-icon-8 = 9;
-ws-icon-9 = 10;
-ws-icon-default = "  "
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+; ws-icon-7 = 8;
+; ws-icon-8 = 9;
+; ws-icon-9 = 10;
+ws-icon-default = ""
+show-all = true;
 
 ; Available tags:
 ;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
@@ -269,8 +273,8 @@ format = <label-state> <label-mode>
 
 label-mode = %mode%
 label-mode-padding = 1
-label-mode-foreground = #000000
-label-mode-background = #FFBB00
+label-mode-foreground = #abb2bf
+label-mode-background = #aa1e2127
 
 ; Available tokens:
 ;   %name%
@@ -279,7 +283,7 @@ label-mode-background = #FFBB00
 ;   %output%
 ; Default: %icon%  %name%
 ; focused = Active workspace on focused monitor
-label-focused =  %name%
+label-focused = %icon%
 label-focused-background = ${colors.background}
 label-focused-foreground = ${colors.foreground}
 label-focused-underline = ${colors.foreground}
@@ -291,14 +295,14 @@ label-focused-padding = 1
 ;   %index%
 ; Default: %icon%  %name%
 ; unfocused = Inactive workspace on any monitor
-label-unfocused =  %name%
+label-unfocused = %icon%
 label-unfocused-padding = 1
 label-unfocused-background = ${colors.background}
 label-unfocused-foreground = ${colors.foreground}
 label-unfocused-underline =
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %icon% %name%
+label-visible = %icon%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = 1
@@ -309,15 +313,15 @@ label-visible-padding = 1
 ;   %index%
 ; Default: %icon%  %name%
 ; urgent = Workspace with urgency hint set
-label-urgent =  %name%
-label-urgent-background = ${self.label-focused-background}
+label-urgent = %icon%
+label-urgent-background = 
 label-urgent-foreground = #db104e
 label-urgent-padding = 1
 
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
-# custom seperator ?
+; custom seperator ?
 
 [module/left-seperator]
 type = custom/text
@@ -331,28 +335,6 @@ content-background = ${colors.background}
 ############                       MODULES A-Z                      ############
 ################################################################################
 ################################################################################
-
-[module/arch-aur-updates]
-type = custom/script
-exec = ~/.config/polybar/scripts/check-all-updates.sh
-interval = 1000
-label = Updates: %output%
-format-foreground = #ededed
-format-background = #AD69AF
-format-prefix = "  "
-format-prefix-foreground = #d7d7d7
-
-
-[module/aur-updates]
-type = custom/script
-exec = cower -u | wc -l
-interval = 1000
-label = Aur: %output%
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-format-prefix = "  "
-format-prefix-foreground = #FFBB00
-format-underline = #FFBB00
 
 ################################################################################
 
@@ -489,12 +471,13 @@ interval = 1
 ; time = %l:%M%p
 ; time-alt = %l:%M%p
 time = "%l:%M%p"
-time-alt = "%a %b %d %Y, %l:%M%p"
+time-alt = " %a %b %d %Y,%l:%M%p"
 format-prefix = ""
-format-prefix-foreground = ${colors.foreground}
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-label = "%date% %time% "
+format-prefix-foreground = #d19a66
+format-foreground = #abb2bf
+format-background = #aa1e2127
+format-underline = #d19a66
+label = "%date%%time%"
 
 #################################################################
 
@@ -655,7 +638,7 @@ interval = 1
 ;   %mb_used%
 ;   %mb_free%
 ;   %mb_total%
-label = %percentage_used%%
+label = %mb_used%
 bar-used-indicator =
 bar-used-width = 10
 bar-used-foreground-0 = #61afef
@@ -663,9 +646,10 @@ bar-used-fill = 
 bar-used-empty = 
 bar-used-empty-foreground = ${colors.foreground}
 
-format = <label> <bar-used>
-format-prefix = " "
-; format-prefix = " "
+; <bar-used>
+format = <label> 
+; format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = #61afef
 format-underline = #61afef
 format-foreground = ${colors.foreground}
@@ -705,7 +689,7 @@ type = internal/network
 interface = enp37s0
 label-connected = "%upspeed%"
 format-connected = <label-connected>
-format-connected-prefix = " "
+format-connected-prefix = " "
 format-connected-underline = #c678dd
 format-connected-prefix-foreground = #c678dd
 format-connected-foreground = ${colors.foreground}
@@ -720,7 +704,7 @@ type = internal/network
 interface = enp37s0
 label-connected = "%downspeed%"
 format-connected = <label-connected>
-format-connected-prefix = " "
+format-connected-prefix = " "
 format-connected-prefix-foreground = #56b6c2
 format-connected-underline = #56b6c2
 format-connected-foreground = ${colors.foreground}
@@ -856,7 +840,7 @@ label = %output%
 
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = #e06c75
 format-underline = #e06c75
 
@@ -916,7 +900,7 @@ label-disconnected = %ifname% disconnected
 format-connected-foreground = ${colors.foreground}
 format-connected-background = ${colors.background}
 format-connected-underline = #55aa55
-format-connected-prefix = " "
+format-connected-prefix =  " "
 format-connected-prefix-foreground = #55aa55
 format-connected-prefix-background = ${colors.background}
 
@@ -1012,15 +996,62 @@ label-indicator-underline = ${colors.foreground}
 [module/xwindow]
 type = internal/xwindow
 
+format = <label>
+
 ; Available tokens:
 ;   %title%
 ; Default: %title%
 label = %title%
-label-maxlen = 50
+label-maxlen = 30
+label-empty = Desktop
 
-format-prefix = "  "
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
+format-prefix = " "
+format-foreground = #abb2bf
+format-background = #aa1e2127
 
 ###############################################################################
 # vim:ft=dosini
+
+[module/powermenu]
+type = custom/menu
+
+format-spacing = 1
+
+label-open = 
+label-open-foreground = #abb2bf
+label-open-background = #aa1e2127
+label-close =  cancel
+label-close-foreground = #abb2bf
+label-close-background = #aa1e2127
+label-separator = -
+label-separator-foreground = #abb2bf
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+menu-0-2 = suspend
+menu-0-2-exec = menu-open-3
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = back
+menu-1-1-exec = sudo reboot
+
+menu-2-0 = power off
+menu-2-0-exec = sudo poweroff
+menu-2-1 = back
+menu-2-1-exec = menu-open-0
+
+menu-3-0 = suspend
+menu-3-0-exec = sudo pm-suspend
+menu-3-1 = back
+
+######################################
+[module/now-playing]
+type = custom/script
+tail = true
+;format-prefix = ""
+format = <label>
+exec = ~/.config/polybar/scripts/poly_play.py
+click-right = "kill -USR1 $(pgrep --oldest --parent %pid%)"

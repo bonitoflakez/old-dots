@@ -1,22 +1,20 @@
 [global]
 monitor = 0
 follow = mouse
-geometry = "250x150-10+20"
-offset = "10x25"
+geometry = "250x150-24+24"
 indicate_hidden = yes
 shrink = no
 transparency = 40
 separator_height = 0
-padding = 12
-horizontal_padding = 20
+padding = 16
+horizontal_padding = 24
 frame_width = 2
 sort = no
 idle_threshold = 120
-font = MesloLGS NF 8
-line_height = 2
+font = Noto Sans 8
+line_height = 4
 markup = full
-format = "[ %a ]\n<b>%s</b>\n%b"
-text_icon_padding = 10
+format = "<b>%s</b>\n%b"
 alignment = left
 show_age_threshold = 60
 word_wrap = yes
@@ -27,8 +25,7 @@ show_indicators = yes
 icon_position = off
 sticky_history = yes
 history_length = 20
-startup_noftification = true
-browser = /usr/bin/google-chrome-stable -new-tab
+browser = /usr/bin/firefox -new-tab
 always_run_script = true
 title = Dunst
 class = Dunst
@@ -40,21 +37,17 @@ history = ctrl+period
 context = ctrl+shift+period
 
 [urgency_low]
-background = "#1E2127"
-foreground = "#abb2bf"
-frame_color = "#667292"
-frame_width = "2"
-timeout = 3
+background = "#000000"
+foreground = "#d8dee8"
+timeout = 2
 
 [urgency_normal]
-background = "#1E2127"
-foreground = "#abb2bf"
-frame_color = "#667292"
-frame_width = "2"
+background = "#000000"
+foreground = "#d8dee8"
 timeout = 4
 
 [urgency_critical]
-background = "#1E2127"
-foreground = "#abb2bf"
-frame_color = "#667292"
+background = "#000000"
+foreground = "#d8dee8"
+frame_color = "#bf616a"
 timeout = 0

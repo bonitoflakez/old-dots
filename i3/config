@@ -216,6 +216,7 @@ exec_always --no-startup-id nitrogen --restore
 
 ## Clipboard Screenshots
 bindsym Ctrl+Shift+Print exec --no-startup-id flameshot gui
+exec --no-startup-id flameshot
 
 # Picom
 exec_always --no-startup-id picom --experimental-backends --config ~/.config/i3/picom.conf &
