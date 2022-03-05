@@ -15,7 +15,8 @@ idle_threshold = 120
 font = MesloLGS NF 8
 line_height = 2
 markup = full
-format = "<b>%s</b>\n%b"
+format = "[ %a ]\n<b>%s</b>\n%b"
+text_icon_padding = 10
 alignment = left
 show_age_threshold = 60
 word_wrap = yes
@@ -26,6 +27,7 @@ show_indicators = yes
 icon_position = off
 sticky_history = yes
 history_length = 20
+startup_noftification = true
 browser = /usr/bin/google-chrome-stable -new-tab
 always_run_script = true
 title = Dunst
@@ -42,7 +44,7 @@ background = "#1E2127"
 foreground = "#abb2bf"
 frame_color = "#667292"
 frame_width = "2"
-timeout = 2
+timeout = 3
 
 [urgency_normal]
 background = "#1E2127"
