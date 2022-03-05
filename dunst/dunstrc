@@ -2,14 +2,14 @@
 monitor = 0
 follow = mouse
 geometry = "250x150-10+20"
-offset = "10x25"
+offset = "10x26"
 indicate_hidden = yes
 shrink = no
 transparency = 40
 separator_height = 0
 padding = 12
 horizontal_padding = 20
-frame_width = 2
+frame_width = 4
 sort = no
 idle_threshold = 120
 font = MesloLGS NF 8

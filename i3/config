@@ -55,7 +55,7 @@ bindsym $mod+d exec --no-startup-id "dmenu_run -nf '#eeeeee' -nb '#151820' -sb '
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # i3 gaps and window title
-for_window [class=".*"] border pixel 2
+for_window [class=".*"] border pixel 4
 gaps inner 6
 gaps outer 2
 border_radius 0
