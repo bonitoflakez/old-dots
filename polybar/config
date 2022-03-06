@@ -18,7 +18,7 @@ compositing-underline = over
 compositing-border = over
 
 format-foreground = #abb2bf
-format-background = #aa1e2127
+format-background = #1a1b26
 format-underline =
 format-overline =
 format-spacing =
@@ -28,12 +28,12 @@ format-offset =
 
 [colors]
 # One Dark
-background = #aa1e2127
+background = #1a1b26
 foreground = #c0c5ce
-alert = #e06c75
-volume-min = #a3be8c
-volume-med = #ebcb8b
-volume-max = #bf616a
+alert = #f7768e
+volume-min = #9ece6a
+volume-med = #e0af68
+volume-max = #ff7a93
 
 [bar/top]
 # Configuration
@@ -94,7 +94,7 @@ separator = ""
 tray-position = right
 tray-detached = false
 tray-maxsize = 20
-tray-background = #aa1e2127
+tray-background = #1a1b26
 tray-offset-x = 0
 tray-offset-y = 0
 tray-padding = 4
