@@ -6,7 +6,8 @@ call plug#begin()
     Plug 'vim-airline/vim-airline'
     Plug 'ryanoasis/vim-devicons'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'navarasu/onedark.nvim'
+"    Plug 'navarasu/onedark.nvim'
+    Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
     Plug 'xiyaowong/nvim-transparent'
 
     " Utilities
@@ -34,10 +35,7 @@ call plug#end()
 """"""""""""
 """""" Theme
 """"""""""""
-let g:onedark_config = {
-    \ 'style': 'darker',
-\}
-colorscheme onedark
+colorscheme tokyonight
 
 " transparent bg
 " autocmd vimenter * hi Normal guibg=000000 ctermbg=000000
@@ -52,7 +50,7 @@ endif
 """"""""""""""
 """""" Airline
 """"""""""""""
-let g:airline_theme='onedark'
+let g:airline_theme='base16_material_palenight'
 let g:airline_powerline_fonts = 1
 
 
