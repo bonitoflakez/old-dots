@@ -50,7 +50,7 @@ endif
 """"""""""""""
 """""" Airline
 """"""""""""""
-let g:airline_theme='base16_material_palenight'
+let g:airline_theme="base16_material_palenight""
 let g:airline_powerline_fonts = 1
 
 
@@ -76,7 +76,7 @@ set splitbelow
 " turn terminal to normal mode with escape
 tnoremap <Esc> <C-\><C-n>
 " start terminal in insert mode
-au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+autocmd BufEnter * if &buftype == 'terminal' | :startinsert | endif
 " open terminal on ctrl+n
 function! OpenTerminal()
   split term://zsh
