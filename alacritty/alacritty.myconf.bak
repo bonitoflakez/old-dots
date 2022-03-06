@@ -1,25 +1,15 @@
-# Configuration for Alacritty, the GPU enhanced terminal emulator.
-env:
+# env:
   # TERM variable
-  TERM: alacritty
+  # TERM: alacritty
 
 window:
-  #dimensions:
-  #  columns: 0
-  #  lines: 0
-  
-  # Window padding (changes require restart)
   padding:
-    x: 4
-    y: 6
+   x: 5
+   y: 5
 
-  # Spread additional padding evenly around the terminal content.
-  #dynamic_padding: false
-
-  # Window title
+  dynamic_padding: false
   title: Alacritty
 
-  # Window class (Linux/BSD only):
   class:
     instance: Alacritty
     general: Alacritty
@@ -59,38 +49,65 @@ font:
 # Bold is Bright
 draw_bold_text_with_bright_colors: true
 
-# Colors (One-Dark)
 colors:
   # Default colors
   primary:
-    background: "0x151820"
-    foreground: "0xabb2bf"
+    background: '0x1e2127'
+    foreground: '0xabb2bf'
+
+    # Bright and dim foreground colors
+    #dim_foreground: '0x9a9a9a'
+    bright_foreground: '0xe6efff'
+
+  # Cursor colors
+  #cursor:
+  #  text: '0x000000'
+  #  cursor: '0xffffff'
 
   # Normal colors
   normal:
-    black: "0x4b5263"
-    red: "0xe06c75"
-    green: "0x98c379"
-    yellow: "0xe5c07b"
-    blue: "0x61afef"
-    magenta: "0xc678dd"
-    cyan: "0x56b6c2"
-    white: "0xabb2bf"
+    black:   '0x1e2127'
+    red:     '0xe06c75'
+    green:   '0x98c379'
+    yellow:  '0xd19a66'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0x828791'
 
   # Bright colors
   bright:
-    black: "0x4b5263"
-    red: "0xe06c75"
-    green: "0x98c379"
-    yellow: "0xd19a66"
-    blue: "0x61afef"
-    magenta: "0xc678dd"
-    cyan: "0x56b6c2"
-    white: "0xabb2bf"
+    black:   '0x5c6370'
+    red:     '0xe06c75'
+    green:   '0x98c379'
+    yellow:  '0xd19a66'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0xe6efff'
+
+  # Dim colors
+  dim:
+    black:   '0x1e2127'
+    red:     '0xe06c75'
+    green:   '0x98c379'
+    yellow:  '0xd19a66'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0x828791'
 
 # Background opacity
-# The value `0.0` is completely transparent and `1.0` is opaque.
-window.opacity: 0.8
+# The value `0.0` is completely transparent and `1.0` is opaque
+window:
+  opacity: 0.6
+
+# Transparent cell backgrounds
+#
+# Whether or not `window.opacity` applies to all cell backgrounds or only to
+# the default background. When set to `true` all cells will be transparent
+# regardless of their background color.
+transparent_background_colors: true
 
 #selection:
 #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"

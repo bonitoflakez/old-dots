@@ -1,22 +1,51 @@
-env:
+#env:
   # TERM variable
-  TERM: alacritty
+  #TERM: alacritty
 
 window:
+  # dimensions:
+  #  columns: 0
+  #  lines: 0
+
+  # position:
+  #  x: 0
+  #  y: 0
+
   padding:
     x: 5
     y: 5
 
-  dynamic_padding: true
+  # dynamic_padding: false
+  # decorations: full
+
+  # Background opacity
+  #
+  # Window opacity as a floating point number from `0.0` to `1.0`.
+  # The value `0.0` is completely transparent and `1.0` is opaque.
+  opacity: 0.8
+
+  # startup_mode: Windowed
+
+  # Window title
   title: Alacritty
 
+  # Allow terminal applications to change Alacritty's window title.
+  dynamic_title: true
+
+  # Window class (Linux/BSD only):
   class:
+    # Application instance name
     instance: Alacritty
+    # General application class
     general: Alacritty
+
+  #gtk_theme_variant: None
 
 scrolling:
   # Specifying '0' will disable scrolling.
   history: 100000
+
+  #multiplier: 3
 
 # Font configuration
 font:
@@ -40,14 +69,15 @@ font:
   # Point size
   size: 10
 
-  # Offset is the extra space around each character. `offset.y` can be thought of
-  # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
+  # Offset is the extra space around each character. `offset.y` can be thought
+  # of as modifying the line spacing, and `offset.x` as modifying the letter
+  # spacing.
   offset:
     x: 0
     y: 1
 
-# Bold is Bright
-draw_bold_text_with_bright_colors: true
+# If `true`, bold text is drawn using the bright color variants.
+draw_bold_text_with_bright_colors: false
 
 colors:
   # Default colors
@@ -97,36 +127,33 @@ colors:
     cyan:    '0x56b6c2'
     white:   '0x828791'
 
-# Background opacity
-# The value `0.0` is completely transparent and `1.0` is opaque
-window:
-  opacity: 0.6
-
-# Transparent cell backgrounds
-#
-# Whether or not `window.opacity` applies to all cell backgrounds or only to
-# the default background. When set to `true` all cells will be transparent
-# regardless of their background color.
-transparent_background_colors: true
-
 #selection:
-#semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+  # This string contains all characters that are used as separators for
+  # "semantic words" in Alacritty.
+  #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
-#save_to_clipboard: false
+  # When set to `true`, selected text will be copied to the primary clipboard.
+  #save_to_clipboard: false
 
-# Allow terminal applications to change Alacritty's window title.
-dynamic_title: true
+cursor:
+  # Cursor style
+  style:
+    # Cursor shape
+    #
+    # Values for `shape`:
+    #   - ▇ Block
+    #   - _ Underline
+    #   - | Beam
+    shape: Underline
 
-#cursor:
-# Values for `style`:
-#   - ▇ Block
-#   - _ Underline
-#   - | Beam
-#style: Block
-
-# Live config reload (changes require restart)
-#live_config_reload: true
-
+    # Cursor blinking state
+    #
+    # Values for `blinking`:
+    #   - Never: Prevent the cursor from ever blinking
+    #   - Off: Disable blinking by default
+    #   - On: Enable blinking by default
+    #   - Always: Force the cursor to always blink
+    #blinking: Off
 
 #url:
 launcher:
