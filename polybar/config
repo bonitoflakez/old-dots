@@ -85,7 +85,7 @@ font-10 = "Font Awesome v4 Compatibility Regular:style=Regular:size=10;1"
 ; modules-center = i3
 ; modules-right = 
 
-modules-left = i3
+modules-left = i3 sep powermenu
 modules-center = now-playing sep date
 modules-right = temperature1 sep cpu sep memory sep pavolume sep networkspeeddown sep uptime
 
@@ -813,25 +813,11 @@ label-separator = -
 label-separator-foreground = ${colors.foreground}
 
 menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-menu-0-2 = suspend
-menu-0-2-exec = menu-open-3
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = back
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = back
-menu-2-1-exec = menu-open-0
-
-menu-3-0 = suspend
-menu-3-0-exec = sudo pm-suspend
-menu-3-1 = back
+menu-0-0-exec = reboot
+menu-0-1 = shutdown
+menu-0-1-exec = shutdown now
+menu-0-2 = hibernate
+menu-0-2-exec = systemctl hibernate
 
 ######################################
 
