@@ -2,8 +2,8 @@
 
 # Showcase
 
-### Desktop
-![image](https://user-images.githubusercontent.com/78542800/156918772-b48c99e6-a525-4fb3-98f9-e744f29cc2fd.png)
+### Neofetch
+![image](https://user-images.githubusercontent.com/78542800/156963704-73d7fb61-979f-4110-b159-9e41f8cae7c3.png)
 
 ### Busy Terminal Space
 ![image](https://user-images.githubusercontent.com/78542800/156960419-14f26d2a-1042-4ce3-9a3e-eb188b4de8d4.png)
