@@ -221,6 +221,9 @@ exec --no-startup-id flameshot
 # Picom
 exec_always --no-startup-id picom --experimental-backends --config ~/.config/i3/picom.conf &
 
+# Betterlockscreen
+bindsym $mod+Shift+x exec --no-startup-id betterlockscreen -l blur
+
 # pulseaudio applet
 # exec_always --no-startup-id pa-applet
 
