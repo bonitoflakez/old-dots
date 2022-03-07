@@ -16,7 +16,7 @@ font_index = 1
 update_delay = 0.5
 
 # (list) : list of chars containing previous, play, pause, next glyphs for media controls in respective order
-control_chars = ['','','','']
+control_chars = ['', '', '', '']
 
 # (dict) : dict of char icons to display as prefix.
 # If player name is available as key, then use the corressponding icon,
@@ -30,7 +30,7 @@ display_player_prefix = {
 
 # (list) : list of metadata fields based on mpris sepecification.
 # For more details/ field names, refer [mpris sepecification](https://www.freedesktop.org/wiki/Specifications/mpris-spec/metadata/)
-metadata_fields = ["xesam:title","xesam:artist"]
+metadata_fields = ["xesam:title", "xesam:artist"]
 
 # (char) : separator for metadata fields
 metadata_separator = "-"
@@ -50,32 +50,39 @@ last_player_name = None
 
 session_bus = dbus.SessionBus()
 
-def get_name(player_name ):
+
+def get_name(player_name):
     if player_name not in player_names:
         return
     name = ".".join(player_name.split(".")[3:])
     return name
+
 
 def get_name_by_index(index):
     if index >= len(player_names):
         return
     return get_name(player_names[index])
 
+
 def get_status(player):
     status = ""
     try:
-        status = player.Get('org.mpris.MediaPlayer2.Player', 'PlaybackStatus', dbus_interface='org.freedesktop.DBus.Properties')
+        status = player.Get('org.mpris.MediaPlayer2.Player', 'PlaybackStatus',
+                            dbus_interface='org.freedesktop.DBus.Properties')
     except Exception as e:
         pass
     return status
 
+
 def get_metadata(player):
     metadata = {}
     try:
-        metadata = player.Get('org.mpris.MediaPlayer2.Player', 'Metadata', dbus_interface='org.freedesktop.DBus.Properties')
+        metadata = player.Get('org.mpris.MediaPlayer2.Player', 'Metadata',
+                              dbus_interface='org.freedesktop.DBus.Properties')
     except Exception as e:
         pass
     return metadata
+
 
 def update_prefix_suffix(player_name="", status=""):
     global display_prefix, display_suffix, status_paused
@@ -84,10 +91,14 @@ def update_prefix_suffix(player_name="", status=""):
     if player_name != "":
         player_option = "-p " + player_name
 
-    prev_button = "%%{A:playerctl %s previous :}%c%%{A}"    %(player_option,control_chars[0])
-    play_button = "%%{A:playerctl %s play :}%c%%{A}"        %(player_option,control_chars[1])
-    pause_button = "%%{A:playerctl %s pause :}%c%%{A}"      %(player_option,control_chars[2])
-    next_button = "%%{A:playerctl %s next :}%c%%{A}"        %(player_option,control_chars[3])
+    prev_button = "%%{A:playerctl %s previous :}%c%%{A}" % (
+        player_option, control_chars[0])
+    play_button = "%%{A:playerctl %s play :}%c%%{A}" % (
+        player_option, control_chars[1])
+    pause_button = "%%{A:playerctl %s pause :}%c%%{A}" % (
+        player_option, control_chars[2])
+    next_button = "%%{A:playerctl %s next :}%c%%{A}" % (
+        player_option, control_chars[3])
 
     suffix = "| " + prev_button
     if status == "Playing":
@@ -107,14 +118,18 @@ def update_prefix_suffix(player_name="", status=""):
     else:
         display_prefix = display_player_prefix["default"]
 
+
 def update_players():
     global player_names, players, session_bus, current_player, last_player_name
-    player_names = [service  for service in session_bus.list_names() if service.startswith('org.mpris.MediaPlayer2.')]
-    players = [session_bus.get_object(service, '/org/mpris/MediaPlayer2') for service in player_names]
+    player_names = [service for service in session_bus.list_names(
+    ) if service.startswith('org.mpris.MediaPlayer2.')]
+    players = [session_bus.get_object(
+        service, '/org/mpris/MediaPlayer2') for service in player_names]
     if last_player_name != get_name(current_player):
         for index, player in enumerate(player_names):
             if get_name(player) == last_player_name:
                 current_player = index
+
 
 def handle_event(*args):
     global current_player, players, last_player_name
@@ -126,8 +141,9 @@ def handle_event(*args):
     last_player_name = getname_by_index(current_player)
 #    print("SIGUSR1: updated values - current_player = %d  players len = %d"%(current_player,len(players)))
 
+
 def update_message():
-    global players, current_player,player_names, message, display_text, message_display_len, display_suffix, last_player_name
+    global players, current_player, player_names, message, display_text, message_display_len, display_suffix, last_player_name
     if len(players) == 0:
         tmp_message = "No player available"
         update_prefix_suffix()
@@ -143,10 +159,11 @@ def update_message():
             if not result:
                 result = "No "+field.split(":")[1]
             metadata_string_list.append(str(result))
-        metadata_string = (" "+metadata_separator+" ").join(metadata_string_list)
+        metadata_string = (" "+metadata_separator +
+                           " ").join(metadata_string_list)
         if visual_len(metadata_string) > message_display_len:
             metadata_string = " " + metadata_string + " |"
-        update_prefix_suffix(name,status)
+        update_prefix_suffix(name, status)
         tmp_message = ""
         if metadata_string:
             tmp_message += str(metadata_string)
@@ -154,6 +171,7 @@ def update_message():
     if message != tmp_message:
         message = tmp_message
         display_text = message
+
 
 def scroll():
     global display_text, message_display_len, status_paused
@@ -163,6 +181,7 @@ def scroll():
         elif visual_len(display_text) < message_display_len:
             display_text += " "*(message_display_len - len(display_text))
 
+
 def visual_len(text):
     visual_length = 0
     for ch in text:
@@ -171,6 +190,7 @@ def visual_len(text):
             visual_length += 2
         visual_length += 1
     return visual_length
+
 
 def make_visual_len(text, visual_desired_length):
     visual_length = 0
@@ -191,16 +211,18 @@ def make_visual_len(text, visual_desired_length):
         altered_text += ' ' * (visual_desired_length - visual_length)
     return altered_text
 
+
 def print_text():
     global display_text, message_display_len, players, player_names, display_prefix, display_suffix
-    if hide_output and len(players)==0:
-        print("", flush = True)
+    if hide_output and len(players) == 0:
+        print("", flush=True)
         return
     scroll()
     print(display_prefix + " " +
-        "%%{T%d}" % (font_index) +
-        make_visual_len(display_text, message_display_len) +
-        "%{T-}" + display_suffix, flush=True)
+          "%%{T%d}" % (font_index) +
+          make_visual_len(display_text, message_display_len) +
+          "%{T-}" + display_suffix, flush=True)
+
 
 def main():
     global current_player, players
@@ -211,6 +233,7 @@ def main():
         update_players()
         update_message()
         print_text()
+
 
 if __name__ == '__main__':
     signal.signal(signal.SIGUSR1, handle_event)

@@ -86,7 +86,7 @@ font-10 = "Font Awesome v4 Compatibility Regular:style=Regular:size=10;1"
 ; modules-right = 
 
 modules-left = i3 sep powermenu
-modules-center = now-playing sep date
+modules-center = spotify sep date
 modules-right = temperature1 sep cpu sep memory sep pavolume sep networkspeeddown sep uptime
 
 separator = ""
@@ -841,3 +841,17 @@ type = custom/text
 content = |
 content-foreground = ${colors.foreground-alt}
 content-padding = 1
+
+###################################
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = " "
+format-prefix-foreground = #1db954
+format = <label>
+exec = python ~/.config/polybar/scripts/spotify_status.py -f '{artist}: {song}'
+format-underline = #667292
+;control players (optional)
+click-left = playerctl --player=spotify play-pause 
+click-right = playerctl --player=spotify next 
+click-middle = playerctl --player=spotify previous 
