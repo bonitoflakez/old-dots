@@ -818,6 +818,8 @@ menu-0-1 = shutdown
 menu-0-1-exec = shutdown now
 menu-0-2 = hibernate
 menu-0-2-exec = systemctl hibernate
+menu-0-3 = lock
+menu-0-3-exec = betterlockscreen --lock blur
 
 ######################################
 
@@ -843,6 +845,7 @@ content-foreground = ${colors.foreground-alt}
 content-padding = 1
 
 ###################################
+
 [module/spotify]
 type = custom/script
 interval = 1
