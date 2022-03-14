@@ -108,7 +108,5 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.g
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 mv ~/.oh-my-zsh ~/.config/zsh/oh-my-zsh
 rm ~/.zshrc ~/.zsh_history
-
 echo "Open nvim with command nvim and type following commands: \n :PlugInstall \n :UpdateRemotePlugins \n q!"
-
 exit
