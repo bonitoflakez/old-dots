@@ -21,9 +21,9 @@ fi
 mount $partition /mnt 
 pacstrap /mnt base base-devel linux linux-firmware
 genfstab -U /mnt >> /mnt/etc/fstab
-sed '1,/^#part2$/d' `basename $0` > /mnt/installer_2.sh
-chmod +x /mnt/installer_2.sh
-arch-chroot /mnt ./installer_2.sh
+sed '1,/^#part2$/d' `basename $0` > /mnt/arch_install2.sh
+chmod +x /mnt/arch_install2.sh
+arch-chroot /mnt ./arch_install2.sh
 exit 
 
 #part2
@@ -72,11 +72,11 @@ read username
 useradd -m -G wheel -s /bin/zsh $username
 passwd $username
 echo "you are done now, you can reboot now!"
-ai3_path=/home/$username/installer_3.sh
-sed '1,/^#part3$/d' installer_2.sh > $inst3
-chown $username:$username $inst3
-chmod +x $inst3
-su -c $inst3 -s /bin/sh $username
+ai3_path=/home/$username/arch_install3.sh
+sed '1,/^#part3$/d' arch_install2.sh > $ai3_path
+chown $username:$username $ai3_path
+chmod +x $ai3_path
+su -c $ai3_path -s /bin/sh $username
 exit
 
 #part3
