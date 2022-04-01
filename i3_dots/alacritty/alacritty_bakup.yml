@@ -1,0 +1,137 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+env:
+  # TERM variable
+  TERM: alacritty
+
+window:
+  #dimensions:
+  #  columns: 0
+  #  lines: 0
+  
+  # Window padding (changes require restart)
+  padding:
+    x: 4
+    y: 6
+
+  # Spread additional padding evenly around the terminal content.
+  #dynamic_padding: false
+
+  # Window title
+  title: Alacritty
+
+  # Window class (Linux/BSD only):
+  class:
+    instance: Alacritty
+    general: Alacritty
+
+scrolling:
+  # Specifying '0' will disable scrolling.
+  history: 100000
+
+# Font configuration
+font:
+
+  normal:
+    family: 'MesloLGS NF'
+    style: Medium
+
+  bold:
+    family: 'MesloLGS NF'
+    style: Medium
+
+  italic:
+    family: 'MesloLGS NF'
+    style: Medium
+
+  bold_italic:
+    family : 'MesloLGS NF'
+    style: Medium
+
+  # Point size
+  size: 10
+
+  # Offset is the extra space around each character. `offset.y` can be thought of
+  # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
+  offset:
+    x: 0
+    y: 1
+
+# Bold is Bright
+draw_bold_text_with_bright_colors: true
+
+# Colors (One-Dark)
+colors:
+  # Default colors
+  primary:
+    background: "0x151820"
+    foreground: "0xabb2bf"
+
+  # Normal colors
+  normal:
+    black: "0x4b5263"
+    red: "0xe06c75"
+    green: "0x98c379"
+    yellow: "0xe5c07b"
+    blue: "0x61afef"
+    magenta: "0xc678dd"
+    cyan: "0x56b6c2"
+    white: "0xabb2bf"
+
+  # Bright colors
+  bright:
+    black: "0x4b5263"
+    red: "0xe06c75"
+    green: "0x98c379"
+    yellow: "0xd19a66"
+    blue: "0x61afef"
+    magenta: "0xc678dd"
+    cyan: "0x56b6c2"
+    white: "0xabb2bf"
+
+# Background opacity
+# The value `0.0` is completely transparent and `1.0` is opaque.
+window.opacity: 0.8
+
+#selection:
+#semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+
+#save_to_clipboard: false
+
+# Allow terminal applications to change Alacritty's window title.
+dynamic_title: true
+
+#cursor:
+# Values for `style`:
+#   - ▇ Block
+#   - _ Underline
+#   - | Beam
+#style: Block
+
+# Live config reload (changes require restart)
+#live_config_reload: true
+
+
+#url:
+launcher:
+  program: xdg-open
+  args: []
+
+key_bindings:
+  # (Windows, Linux, and BSD only)
+  - { key: V, mods: Control|Shift, action: Paste }
+  - { key: C, mods: Control|Shift, action: Copy }
+  - { key: Insert, mods: Shift, action: PasteSelection }
+  - { key: Key0, mods: Control, action: ResetFontSize }
+  - { key: Equals, mods: Control, action: IncreaseFontSize }
+  - { key: Plus, mods: Control, action: IncreaseFontSize }
+  - { key: Minus, mods: Control, action: DecreaseFontSize }
+  - { key: Minus, mods: Control, action: DecreaseFontSize }
+
+  - { key: Paste, action: Paste }
+  - { key: Copy, action: Copy }
+  - { key: L, mods: Control, action: ClearLogNotice }
+  - { key: L, mods: Control, chars: "\x0c" }
+  - { key: PageUp, mods: Shift, action: ScrollPageUp, mode: ~Alt }
+  - { key: PageDown, mods: Shift, action: ScrollPageDown, mode: ~Alt }
+  - { key: Home, mods: Shift, action: ScrollToTop, mode: ~Alt }
+  - { key: End, mods: Shift, action: ScrollToBottom, mode: ~Alt }
