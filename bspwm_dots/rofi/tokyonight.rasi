@@ -31,9 +31,9 @@
 }
 window {
     background-color: @background;
-    border:           2;
+    border:           1;
     padding:          5;
-    border-radius: 4;
+    border-radius: 8;
 }
 mainbox {
     border:  0;
@@ -100,9 +100,9 @@ element.alternate.active {
     text-color:       @alternate-active-foreground;
 }
 scrollbar {
-    width:        4px ;
+    width:        0 ;
     border:       0;
-    handle-width: 8px ;
+    handle-width: 0 ;
     padding:      0;
 }
 mode-switcher {
