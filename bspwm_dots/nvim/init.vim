@@ -18,7 +18,6 @@ call plug#begin()
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'junegunn/fzf.vim'
 "    Plug 'kyazdani42/nvim-web-devicons'
-"    Plug 'romgrk/barbar.nvim'
 
     " Completion / linters / formatters
     Plug 'plasticboy/vim-markdown'
