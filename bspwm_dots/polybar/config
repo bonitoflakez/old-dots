@@ -57,7 +57,7 @@ fixed-center = true
 fixed-right = true
 fixed-left = true
 width = 100%
-height = 20
+height = 25
 # offset-x = 1%
 # offset-y = 1%
 
@@ -95,13 +95,13 @@ separator = ""
 
 tray-position = right
 tray-detached = false
-tray-maxsize = 20
+tray-maxsize = 16
 tray-transparent = true
 tray-background = ${colors.background}
 tray-foreground = ${colors.foreground}
 tray-offset-x = 0
 tray-offset-y = 0
-tray-padding = 4
+tray-padding = 0
 tray-scale = 1.0
 dpi-x = 96
 dpi-y = 96
@@ -123,6 +123,18 @@ double-click-left =
 double-click-middle =
 double-click-right =
 
+# compositing settings
+compositing-background = source
+compositing-foreground = over
+compositing-overline = over
+compositing-underline = over
+compositing-border = over
+
+# Enables pseudo-transparency for the bar
+# If set to true the bar can be transparent without a compositor.
+pseudo-transparency = false
+
+
 # Requires polybar to be built with xcursor support (xcb-util-cursor)
 # Possible values are:
 # - default   : The default pointer as before, can also be an empty string (default)
@@ -143,7 +155,7 @@ enable-click = true
 enable-scroll = false
 reverse-scroll = false
 fuzzy-match = false
-; ws-icon-[0-9]+ = label;icon
+# ws-icon-[0-9]+ = label;icon
 
 ; the label needs to correspond with the bspwm workspace name
 ws-icon-0 = I;
@@ -156,7 +168,7 @@ ws-icon-6 = VII;
 ws-icon-7 = VIII;
 ws-icon-8 = IX;
 ws-icon-9 = X;
-;ws-icon-default = ♟
+# ws-icon-default = ♟
 
 format = <label-state> <label-mode>
 label-monitor = %name%
