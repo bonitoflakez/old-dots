@@ -130,10 +130,6 @@ compositing-overline = over
 compositing-underline = over
 compositing-border = over
 
-# Enables pseudo-transparency for the bar
-# If set to true the bar can be transparent without a compositor.
-pseudo-transparency = false
-
 
 # Requires polybar to be built with xcursor support (xcb-util-cursor)
 # Possible values are:
