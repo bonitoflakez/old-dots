@@ -134,3 +134,7 @@ Print
 	flameshot full
 super + Print
 	flameshot gui
+
+# lockscreen
+alt + shift + x
+    betterlockscreen -l dim

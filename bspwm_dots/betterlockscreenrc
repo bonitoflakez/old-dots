@@ -9,7 +9,7 @@ dim_level=10
 blur_level=2
 pixel_scale=10,1000
 solid_color=333333
-wallpaper_cmd="feh --bg-fill /home/nikk/pictures/wallpapers/mew_mew.png"
+wallpaper_cmd="feh --bg-fill /home/nikk/pictures/wallpapers/asm.png"
 # i3lockcolor_bin="i3lock-color" # Manually set command for i3lock-color
 
 # default theme
