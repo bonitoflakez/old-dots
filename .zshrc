@@ -110,5 +110,7 @@ alias polyconf="nvim ~/.config/polybar/config"
 alias picomconf="nvim ~/.config/picom/picom.conf"
 alias dunstconf="nvim ~/.config/dunst/dunstrc"
 alias cleantrash="sudo pacman -R $(pacman -Qtdq)"
+alias todolist="cat ~/Documents/todo.md"
+alias todoedit="nvim ~/Documents/todo.md"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
