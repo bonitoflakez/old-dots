@@ -23,12 +23,12 @@
 ```
 sudo pacman -S git wget curl make cmake gcc \
 picom bspwm sxhkd alacritty thunar lxappearance\
-nitrogen dunst rofi pulseaudio pulseaudio-alsa\
+nitrogen dunst feh rofi pulseaudio pulseaudio-alsa\
 alsa-utils ttf-fira-code flameshot firefox neovim
 ```
 
 #### AUR packages
 ```
 paru -S polybar visual-studio-code-bin\
-all-repository-fonts
+all-repository-fonts betterlockscreen udiskie
 ```
