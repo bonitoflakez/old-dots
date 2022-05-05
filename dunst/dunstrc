@@ -20,7 +20,7 @@
   ignore_newline = no
   stack_duplicates = true
   hide_duplicate_count = no
-  show_indicators = yes
+  show_indicators = no
   frame_color = "#32344a"
   separator_color = "#32344a"
   icon_position = left
