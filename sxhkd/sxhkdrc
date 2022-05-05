@@ -137,4 +137,4 @@ super + Print
 
 # lockscreen
 alt + shift + x
-    betterlockscreen -l dim
+    betterlockscreen --lock blur
