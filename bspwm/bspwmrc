@@ -45,4 +45,3 @@ bspc rule -a Lxappearance state=floating center=true
 bspc rule -a nitrogen state=floating center=true
 bspc rule -a Screenkey manage=off
 bspc rule -a jetbrains-studio state=floating center=true
-bspc rule -a jetbrains-idea-ce state=floating center=true
