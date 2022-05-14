@@ -2,8 +2,8 @@
   monitor = 0
   follow = mouse
   shrink = no
-  padding = 20
-  horizontal_padding = 20
+  padding = 15
+  horizontal_padding = 15
   width = 275
   height = 100
   offset = 20x40
