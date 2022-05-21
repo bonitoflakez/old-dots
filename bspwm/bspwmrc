@@ -27,7 +27,7 @@ polybar top --quiet &
 xset -dpms s off
 
 bspc config border_width          1
-bspc config window_gap            4
+bspc config window_gap            8
 
 bspc config normal_border_color   \#32344a
 bspc config focused_border_color  \#444b6a
