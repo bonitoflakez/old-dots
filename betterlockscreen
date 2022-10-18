@@ -1,5 +1,7 @@
 # ~/.config/betterlockscreenrc
 
+# betterlockscreen -u <path-to-background>
+
 # default options
 display_on=0
 span_image=false
@@ -9,11 +11,10 @@ dim_level=10
 blur_level=2
 pixel_scale=10,1000
 solid_color=333333
-wallpaper_cmd="feh --bg-fill /home/nikk/Pictures/wallpapers/evening-sky.png"
+wallpaper_cmd="feh --bg-fill ~/Pictures/gruvbox-wallpapers/gruvbox-space.jpg"
 # i3lockcolor_bin="i3lock-color" # Manually set command for i3lock-color
 
-# default theme
-loginbox=1a1b26
+loginbox=32302f
 loginshadow=00000000
 locktext="enter pass"
 font="Fira Code"
@@ -23,14 +24,14 @@ separatorcolor=00000000
 ringvercolor=ffffffff
 insidevercolor=00000000
 ringwrongcolor=ffffffff
-insidewrongcolor=f7768e
+insidewrongcolor=fe8019
 timecolor=ffffffff
 time_format="%l:%H_%p"
 greetercolor=ffffffff
 layoutcolor=ffffffff
-keyhlcolor=1a1b26
-bshlcolor=1a1b26
+keyhlcolor=32302f
+bshlcolor=32302f
 verifcolor=ffffffff
-wrongcolor=d23c3dff
-modifcolor=1a1b26
-bgcolor=000000ff
+wrongcolor=fb4934
+modifcolor=98971a
+bgcolor=282828ff

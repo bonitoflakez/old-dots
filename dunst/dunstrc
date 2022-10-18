@@ -21,8 +21,8 @@
   stack_duplicates = true
   hide_duplicate_count = no
   show_indicators = no
-  frame_color = "#32344a"
-  separator_color = "#32344a"
+  frame_color = "#b8bb26"
+  separator_color = "#b8bb26"
   icon_position = left
   max_icon_size= 60
   sticky_history = no
@@ -42,21 +42,21 @@
   context = ctrl+shift+period
 
   [urgency_low]
-  background = "#1E1D2F"
-  foreground = "#D9E0EE"
-  frame_color = "#32344a"
+  background = "#282828"
+  foreground = "#ebdbb2"
+  frame_color = "#b8bb26"
   frame_width = "2"
   timeout = 4
 
   [urgency_normal]
-  background = "#1E1D2F"
-  foreground = "#D9E0EE"
-  frame_color = "#32344a"
+  background = "#282828"
+  foreground = "#ebdbb2"
+  frame_color = "#b8bb26"
   frame_width = "2"
   timeout = 4
 
   [urgency_critical]
-  background = "#1E1D2F"
-  foreground = "#D9E0EE"
-  frame_color = "#32344a"
+  background = "#282828"
+  foreground = "#ebdbb2"
+  frame_color = "#b8bb26"
   timeout = 2

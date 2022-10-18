@@ -67,9 +67,6 @@ font:
   # Point size
   size: 10
 
-  # Offset is the extra space around each character. `offset.y` can be thought
-  # of as modifying the line spacing, and `offset.x` as modifying the letter
-  # spacing.
   offset:
     x: 0
     y: 1
@@ -77,108 +74,44 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: false
 
-# Catppuccin!
+# Colors (Gruvbox dark)
 colors:
   # Default colors
   primary:
-    background: '0x1E1D2F'
-    foreground: '0xD9E0EE'
-
-  # Colors the cursor will use if `custom_cursor_colors` is true
-  cursor:
-    text: '0x1E1D2F'
-    cursor: '0xF5E0DC'
+    # hard contrast: background = '0x1d2021'
+    background: '0x282828'
+    # soft contrast: background = '0x32302f'
+    foreground: '0xebdbb2'
 
   # Normal colors
   normal:
-    black:   '0x6E6C7E'
-    red:     '0xF28FAD'
-    green:   '0xABE9B3'
-    yellow:  '0xFAE3B0'
-    blue:    '0x96CDFB'
-    magenta: '0xF5C2E7'
-    cyan:    '0x89DCEB'
-    white:   '0xD9E0EE'
+    black:   '0x282828'
+    red:     '0xcc241d'
+    green:   '0x98971a'
+    yellow:  '0xd79921'
+    blue:    '0x458588'
+    magenta: '0xb16286'
+    cyan:    '0x689d6a'
+    white:   '0xa89984'
 
   # Bright colors
   bright:
-    black:   '0x988BA2'
-    red:     '0xF28FAD'
-    green:   '0xABE9B3'
-    yellow:  '0xFAE3B0'
-    blue:    '0x96CDFB'
-    magenta: '0xF5C2E7'
-    cyan:    '0x89DCEB'
-    white:   '0xD9E0EE'
-
-  indexed_colors:
-    - { index: 16, color: '0xF8BD96' }
-    - { index: 17, color: '0xF5E0DC' }
-
-  #   background: '0x1e2127'
-  #   foreground: '0xabb2bf'
-
-  #   # Bright and dim foreground colors
-  #   #dim_foreground: '0x9a9a9a'
-  #   bright_foreground: '0xe6efff'
-
-  # # Cursor colors
-  # #cursor:
-  # #  text: '0x000000'
-  # #  cursor: '0xffffff'
-
-  # # Normal colors
-  # normal:
-  #   black:   '0x1e2127'
-  #   red:     '0xe06c75'
-  #   green:   '0x98c379'
-  #   yellow:  '0xd19a66'
-  #   blue:    '0x61afef'
-  #   magenta: '0xc678dd'
-  #   cyan:    '0x56b6c2'
-  #   white:   '0x828791'
-
-  # # Bright colors
-  # bright:
-  #   black:   '0x5c6370'
-  #   red:     '0xe06c75'
-  #   green:   '0x98c379'
-  #   yellow:  '0xd19a66'
-  #   blue:    '0x61afef'
-  #   magenta: '0xc678dd'
-  #   cyan:    '0x56b6c2'
-  #   white:   '0xe6efff'
-
-  # # Dim colors
-  # dim:
-  #   black:   '0x1e2127'
-  #   red:     '0xe06c75'
-  #   green:   '0x98c379'
-  #   yellow:  '0xd19a66'
-  #   blue:    '0x61afef'
-  #   magenta: '0xc678dd'
-  #   cyan:    '0x56b6c2'
-  #   white:   '0x828791'
+    black:   '0x928374'
+    red:     '0xfb4934'
+    green:   '0xb8bb26'
+    yellow:  '0xfabd2f'
+    blue:    '0x83a598'
+    magenta: '0xd3869b'
+    cyan:    '0x8ec07c'
+    white:   '0xebdbb2'
 
 cursor:
-  # Cursor style
   style:
-    # Cursor shape
-    #
-    # Values for `shape`:
-    #   - ▇ Block
-    #   - _ Underline
-    #   - | Beam
+    # shape: Block, Underline, Beam
     shape: Underline
 
-    # Cursor blinking state
-    #
-    # Values for `blinking`:
-    #   - Never: Prevent the cursor from ever blinking
-    #   - Off: Disable blinking by default
-    #   - On: Enable blinking by default
-    #   - Always: Force the cursor to always blink
-    #blinking: Off
+    # blinking: never, off, on, always
+    blinking: Off
 
 #url:
 launcher:

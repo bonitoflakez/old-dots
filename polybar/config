@@ -22,8 +22,8 @@ compositing-overline = over
 compositing-underline = over
 compositing-border = over
 
-format-foreground = #D9E0EE
-format-background = #1E1D2F
+format-foreground = #fbf1c7
+format-background = #282828
 format-underline =
 format-overline =
 format-spacing =
@@ -33,15 +33,15 @@ format-offset =
 
 [colors]
 # Catppuccin!
-background = #1E1D2F
-background2 = #32344a
-background3 = #444b6a
-underline = #667292
-foreground = #D9E0EE
-alert = #f7768e
-volume-min = #9ece6a
-volume-med = #e0af68
-volume-max = #ff7a93
+background = #282828
+background2 = #32302f
+background3 = #504945
+underline = #98971a
+foreground = #fbf1c7
+alert = #cc241d
+volume-min = #b8bb26
+volume-med = #fe8019
+volume-max = #fb4934
 
 ################
 ## Bar Config ##

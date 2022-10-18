@@ -130,9 +130,9 @@ XF86AudioMute
 	pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # Screenshot
-Print
+print
 	flameshot full
-super + Print
+shift + print
 	flameshot gui
 
 # lockscreen
