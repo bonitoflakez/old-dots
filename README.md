@@ -8,6 +8,8 @@
 ### nvim
 ![image](https://user-images.githubusercontent.com/78542800/196747948-ae1ca3f8-f396-4149-abda-a6f7d8c66b08.png)
 
+#### NeoVim Setup -> ![Here](https://github.com/salientarc/nvim-conf)
+
 ### vscode
 ![image](https://user-images.githubusercontent.com/78542800/196748148-1bf69c3f-a9d6-42d0-a3cf-346836125015.png)
 
@@ -32,4 +34,4 @@ alsa-utils ttf-fira-code flameshot firefox neovim
 paru -S polybar visual-studio-code-bin\
 all-repository-fonts betterlockscreen udiskie\
 nerd-fonts-fira-code
-```
+``` 
