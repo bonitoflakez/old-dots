@@ -3,19 +3,19 @@
 ### Showcase
 
 ### Main Desktop
-![image](https://user-images.githubusercontent.com/78542800/166693147-326ba486-533c-4912-a53f-c16115261ad5.png)
+![image](https://user-images.githubusercontent.com/78542800/196747154-82269ce0-7637-468f-a0b8-16d08eb76564.png)
 
 ### nvim
-![image](https://user-images.githubusercontent.com/78542800/166693952-328c8e9e-ac9b-4a0f-bf5e-d1386593ebc3.png)
+![image](https://user-images.githubusercontent.com/78542800/196747948-ae1ca3f8-f396-4149-abda-a6f7d8c66b08.png)
 
 ### vscode
-![image](https://user-images.githubusercontent.com/78542800/166694437-63c923a2-e6f1-4798-8c3f-d4b7c0125b17.png)
+![image](https://user-images.githubusercontent.com/78542800/196748148-1bf69c3f-a9d6-42d0-a3cf-346836125015.png)
 
 ### rofi
-![image](https://user-images.githubusercontent.com/78542800/166695678-1ef85da5-b387-43fa-8dfb-004be76a760c.png)
+![image](https://user-images.githubusercontent.com/78542800/196748530-5176cff2-163f-422d-afb3-a91ef987946a.png)
 
 ### dunst
-![image](https://user-images.githubusercontent.com/78542800/166696102-6dcbaa05-a977-464f-9988-144ffac216a8.png)
+![image](https://user-images.githubusercontent.com/78542800/196748709-64d9477b-ab9b-47ea-a884-28a7b4a7cd17.png)
 
 ### Installation
 
@@ -30,5 +30,6 @@ alsa-utils ttf-fira-code flameshot firefox neovim
 #### AUR packages
 ```
 paru -S polybar visual-studio-code-bin\
-all-repository-fonts betterlockscreen udiskie
+all-repository-fonts betterlockscreen udiskie\
+nerd-fonts-fira-code
 ```
