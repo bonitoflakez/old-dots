@@ -49,19 +49,19 @@ scrolling:
 # Font configuration
 font:
   normal:
-    family: "Fira Code"
+    family: "FiraCode Nerd Font"
     style: Medium
 
   bold:
-    family: "Fira Code"
+    family: "FiraCode Nerd Font"
     style: Medium
 
   italic:
-    family: "Fira Code"
+    family: "FiraCode Nerd Font"
     style: Medium
 
   bold_italic:
-    family: "Fira Code"
+    family: "FiraCode Nerd Font"
     style: Medium
 
   # Point size
