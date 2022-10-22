@@ -1,17 +1,11 @@
-#######################
-## My Polybar Config ##
-#######################
-
-####################
-## General Config ##
-####################
+# general configuration
 
 [global/wm]
 margin-top = 0
 margin-bottom = 0
 
-[settings]
 # application-settings
+[settings]
 throttle-output = 5
 throttle-output-for = 10
 throttle-input-for = 30
@@ -32,7 +26,6 @@ format-margin =
 format-offset =
 
 [colors]
-# Catppuccin!
 background = #282828
 background2 = #32302f
 background3 = #504945
@@ -43,10 +36,7 @@ volume-min = #b8bb26
 volume-med = #fe8019
 volume-max = #fb4934
 
-################
-## Bar Config ##
-################
-
+# bar configuration
 [bar/top]
 monitor = 
 # monitor-fallback = HDMI1
@@ -89,7 +79,7 @@ font-10 = "Font Awesome v4 Compatibility Regular:style=Regular:size=10;1"
 
 modules-left = bspwm sep powermenu
 modules-center = date
-modules-right = temperature1 sep cpu sep memory sep pavolume sep networkspeeddown sep uptime
+modules-right = typingspeed sep cpu sep memory sep pavolume sep networkspeeddown sep uptime sep noisetorch-check
 
 separator = ""
 
@@ -139,10 +129,7 @@ compositing-border = over
 cursor-click =
 cursor-scroll =
 
-##################
-## BSPWM Config ##
-##################
-
+# BSPWM configuration
 [module/bspwm]
 type = internal/bspwm
 pin-workspaces = false
@@ -203,17 +190,8 @@ label-sticky-foreground = ${colors.foreground}
 label-locked-foreground = ${colors.underline}
 label-private-foreground = ${colors.alert}
 
-[module/left-seperator]
-type = custom/text
-content = " | "
-content-font = 1
-content-foreground = ${colors.foreground}
-content-background = ${colors.background}
 
-#################
-## All Modules ##
-#################
-
+# all modules
 [module/backlight]
 type = internal/backlight
 card = amdgpu_bl0
@@ -242,6 +220,8 @@ bar-width = 10
 bar-indicator = |
 bar-fill = ─
 bar-empty = ─
+
+################################################################################
 
 [module/battery]
 # battery
@@ -281,6 +261,8 @@ animation-charging-3 = 
 animation-charging-4 = 
 animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 1000
+
+################################################################################
 
 [module/cpu]
 type = internal/cpu
@@ -329,23 +311,6 @@ format-background = ${colors.background}
 format-padding = 1
 format-underline = ${colors.underline}
 label = "%date%%time%"
-
-################################################################################
-
-[module/load-average]
-type = custom/script
-exec = uptime | grep -ohe 'load average[s:][: ].*' | awk '{ print $3" "$4" "$5"," }' | sed 's/,//g'
-interval = 100
-
-;HOW TO SET IT MINIMAL 10 CHARACTERS - HIDDEN BEHIND SYSTEM ICONS
-;label = %output%
-label = %output:10%
-
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-format-prefix = "  "
-format-prefix-foreground = #62FF00
-format-underline = #62FF00
 
 ################################################################################
 
@@ -413,22 +378,6 @@ format-connected-background = ${colors.background}
 
 ################################################################################
 
-[module/pavolume]
-type = custom/script
-tail = true
-label = %output%
-exec = ~/.config/polybar/scripts/pavolume.sh --listen
-click-right = exec pavucontrol
-click-left = ~/.config/polybar/scripts/pavolume.sh --togmute
-scroll-up = ~/.config/polybar/scripts/pavolume.sh --up
-scroll-down = ~/.config/polybar/scripts/pavolume.sh --down
-format-foreground = ${colors.foreground}
-format-padding = 1
-format-background = ${colors.background}
-format-underline = ${colors.underline}
-
-################################################################################
-
 [module/temperature1]
 type = internal/temperature
 ; Thermal zone to use
@@ -465,53 +414,7 @@ ramp-3 = 
 ramp-4 = 
 ramp-foreground =${colors.foreground}
 
-################################################################################
 
-[module/uptime]
-type = custom/script
-exec = ~/.config/polybar/scripts/uptime.sh
-interval = 100
-label = %output%
-
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-format-prefix = " "
-format-padding = 1
-format-prefix-foreground = ${colors.foreground}
-format-underline = ${colors.underline}
-
-################################################################################
-
-[module/volume]
-type = internal/volume
-format-volume = "<label-volume>  <bar-volume>"
-
-label-volume = " "
-label-volume-foreground = #40ad4b
-label-muted = muted
-
-bar-volume-width = 10
-bar-volume-foreground-0 = #40ad4b
-bar-volume-foreground-1 = #40ad4b
-bar-volume-foreground-2 = #40ad4b
-bar-volume-foreground-3 = #40ad4b
-bar-volume-foreground-4 = #40ad4b
-bar-volume-foreground-5 = #40ad4b
-bar-volume-foreground-6 = #40ad4b
-bar-volume-gradient = false
-bar-volume-indicator = 
-bar-volume-indicator-font = 2
-bar-volume-fill = 
-bar-volume-fill-font = 2
-bar-volume-empty = 
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground}
-format-volume-foreground = ${colors.foreground}
-format-volume-background = ${colors.background}
-format-muted-prefix = "  "
-format-muted-prefix-foreground = "#ff0000"
-format-muted-foreground = ${colors.foreground}
-format-muted-background = ${colors.background}
 
 #################################################################################
 
@@ -647,6 +550,82 @@ format-prefix = " "
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
+
+# custom modules
+[module/load-average]
+type = custom/script
+exec = uptime | grep -ohe 'load average[s:][: ].*' | awk '{ print $3" "$4" "$5"," }' | sed 's/,//g'
+interval = 100
+
+;HOW TO SET IT MINIMAL 10 CHARACTERS - HIDDEN BEHIND SYSTEM ICONS
+;label = %output%
+label = %output:10%
+
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-prefix = "  "
+format-prefix-foreground = #62FF00
+format-underline = #62FF00
+
+################################################################################
+
+[module/typingspeed]
+type = custom/script
+exec = ~/.config/polybar/scripts/wpm.sh
+label = %output%
+tail = true
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-prefix = "[!] "
+format-padding = 1
+format-prefix-foreground = ${colors.foreground}
+format-underline = ${colors.underline}
+
+################################################################################
+
+[module/pavolume]
+type = custom/script
+tail = true
+label = %output%
+exec = ~/.config/polybar/scripts/pavolume.sh --listen
+click-right = exec pavucontrol
+click-left = ~/.config/polybar/scripts/pavolume.sh --togmute
+scroll-up = ~/.config/polybar/scripts/pavolume.sh --up
+scroll-down = ~/.config/polybar/scripts/pavolume.sh --down
+format-foreground = ${colors.foreground}
+format-padding = 1
+format-background = ${colors.background}
+format-underline = ${colors.underline}
+
+################################################################################
+
+[module/uptime]
+type = custom/script
+exec = ~/.config/polybar/scripts/uptime.sh
+interval = 100
+label = %output%
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-prefix = " "
+format-padding = 1
+format-prefix-foreground = ${colors.foreground}
+format-underline = ${colors.underline}
+
+###############################################################################
+
+[module/noisetorch-check]
+type = custom/script
+exec = ~/.config/polybar/scripts/noisetorch.sh
+label = %output%
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+format-prefix = ""
+format-padding = 1
+format-prefix-foreground = ${colors.foreground}
+format-underline = ${colors.underline}
+click-left = exec noisetorch -i
+click-right = exec noisetorch -u
+
 ###############################################################################
 # vim:ft=dosini
 
@@ -673,7 +652,7 @@ menu-0-2-exec = systemctl hibernate
 menu-0-3 = lock
 menu-0-3-exec = betterlockscreen --lock blur
 
-######################################
+###############################################################################
 
 [module/now-playing]
 type = custom/script
@@ -688,7 +667,7 @@ label-foreground = ${colors.foreground}
 label-background = ${colors.background}
 label-underline = ${colors.underline}
 
-##################################
+###############################################################################
 
 [module/sep]
 type = custom/text
@@ -696,4 +675,11 @@ content = |
 content-foreground = ${colors.foreground-alt}
 content-padding = 1
 
-###################################
+###############################################################################
+
+[module/left-seperator]
+type = custom/text
+content = " | "
+content-font = 1
+content-foreground = ${colors.foreground}
+content-background = ${colors.background}
