@@ -19,6 +19,9 @@
 ### dunst
 ![image](https://user-images.githubusercontent.com/78542800/196748709-64d9477b-ab9b-47ea-a884-28a7b4a7cd17.png)
 
+### Polybar
+![image](https://user-images.githubusercontent.com/78542800/197326257-5b8463e5-78dd-439d-9f26-a705c9ea33b1.png)
+
 ### Installation
 
 #### pacman packages
@@ -33,5 +36,5 @@ alsa-utils ttf-fira-code flameshot firefox neovim
 ```
 paru -S polybar visual-studio-code-bin\
 all-repository-fonts betterlockscreen udiskie\
-nerd-fonts-fira-code
+nerd-fonts-fira-code noisetorch
 ``` 
