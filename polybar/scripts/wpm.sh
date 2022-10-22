@@ -1,7 +1,7 @@
 #!/bin/sh
 # shellcheck disable=SC2016,SC2059
 
-# Find your keybaord ID using `xinput list | grep "keybord"`.
+# Find your keybaord ID using `xinput list | grep "keyboard"`.
 # Use device ID to stop minor mindfucks.
 # You can use `xinput test <ID>` to test keycodes in real time.
 KEYBOARD_ID="13"
