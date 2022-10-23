@@ -36,5 +36,5 @@ alsa-utils ttf-fira-code flameshot firefox neovim
 ```
 paru -S polybar visual-studio-code-bin\
 all-repository-fonts betterlockscreen udiskie\
-nerd-fonts-fira-code noisetorch
+nerd-fonts-fira-code noisetorch uwufetch
 ``` 
