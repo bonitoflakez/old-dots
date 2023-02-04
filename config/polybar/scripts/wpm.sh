@@ -4,7 +4,7 @@
 # Find your keybaord ID using `xinput list | grep "keyboard"`.
 # Use device ID to stop minor mindfucks.
 # You can use `xinput test <ID>` to test keycodes in real time.
-KEYBOARD_ID="13"
+KEYBOARD_ID="12"
 
 METRIC=wpm
 FORMAT="%d $METRIC"

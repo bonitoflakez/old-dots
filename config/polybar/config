@@ -79,7 +79,7 @@ font-10 = "Font Awesome v4 Compatibility Regular:style=Regular:size=10;1"
 
 modules-left = bspwm sep powermenu
 modules-center = date
-modules-right = typingspeed sep cpu sep memory sep pavolume sep networkspeeddown sep uptime sep noisetorch-check
+modules-right = typingspeed sep cpu sep memory sep pavolume sep wireless-network sep uptime sep battery sep noisetorch-check
 
 separator = ""
 
@@ -234,18 +234,18 @@ format-charging = <animation-charging> <label-charging>
 label-charging =  %percentage%%
 format-charging-foreground = ${colors.foreground}
 format-charging-background = ${colors.background}
-format-charging-underline = #E0C097
+format-charging-underline = ${colors.underline}
 
 format-discharging = <ramp-capacity> <label-discharging>
 label-discharging =  %percentage%%
-format-discharging-underline = #E0C097
+format-discharging-underline = ${colors.underline}
 format-discharging-foreground = ${colors.foreground}
 format-discharging-background = ${colors.background}
 
 label-full =  %percentage%%
 label-full-foreground = ${colors.foreground}
 label-full-background = ${colors.background}
-label-full-underline = #E0C097
+label-full-underline = ${colors.underline}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -462,9 +462,9 @@ format-connected = <label-connected>
 format-connected-foreground = ${colors.foreground}
 format-connected-background = ${colors.background}
 format-connected-prefix = " "
-format-connected-prefix-foreground = #c678dd
+format-connected-prefix-foreground = ${colors.foreground}
 format-connected-prefix-background = ${colors.background}
-format-connected-underline = #c678dd
+format-connected-underline = ${colors.underline}
 
 label-disconnected = %ifname% disconnected
 label-disconnected-foreground = ${colors.alert}
@@ -486,7 +486,7 @@ ramp-signal-4 = ▅
 ramp-signal-5 = ▆
 ramp-signal-6 = ▇
 ramp-signal-7 = █
-ramp-signal-foreground = #c678dd
+ramp-signal-foreground = ${colors.foreground}
 
 ################################################################################
 

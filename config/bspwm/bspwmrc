@@ -16,7 +16,7 @@ dunst &
 
 nitrogen --restore &
 
-picom --experimental-backends --config ~/.config/picom/picom.conf &
+picom --config ~/.config/picom/picom.conf &
 
 flameshot &
 

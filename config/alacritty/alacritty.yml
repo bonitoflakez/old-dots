@@ -65,7 +65,7 @@ font:
     style: Medium
 
   # Point size
-  size: 10
+  size: 7
 
   offset:
     x: 0
