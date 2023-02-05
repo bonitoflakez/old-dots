@@ -129,6 +129,10 @@ XF86AudioLowerVolume
 XF86AudioMute
 	pactl set-sink-mute @DEFAULT_SINK@ toggle
 
+## Brightness Keys
+XF86MonBrightness{Up,Down}  
+	brightnessctl s 20{+,-}
+
 # Screenshot
 print
 	flameshot full
