@@ -12,8 +12,9 @@ CASE_SENSITIVE="false"
 
 plugins=(
   git 
-  zsh-syntax-highlighting 
   zsh-autosuggestions
+  zsh-syntax-highlighting
+  fast-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
